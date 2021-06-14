@@ -23,7 +23,7 @@ public class ListaEmpresaServlet extends HttpServlet {
 		
 		List<Empresa> empresasCadastradas = banco.getEmpresas();		
 				
-		request.setAttribute("empresa", empresasCadastradas);
+		request.setAttribute("empresas", empresasCadastradas);
 		RequestDispatcher rd = request.getRequestDispatcher("empresascadastradas.jsp");
 		rd.forward(request, response);
 	}

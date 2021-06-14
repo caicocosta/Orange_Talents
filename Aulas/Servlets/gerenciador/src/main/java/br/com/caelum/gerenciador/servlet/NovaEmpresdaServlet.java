@@ -2,6 +2,9 @@ package br.com.caelum.gerenciador.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -33,6 +36,12 @@ public class NovaEmpresdaServlet extends HttpServlet {
 		Empresa empresa = new Empresa();		
 		
 		empresa.setNome(request.getParameter("nome"));
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			empresa.setDataAbertura(sdf.parse(request.getParameter("dataAbertura")));
+		} catch (ParseException e) {
+			throw new ServletException(e);
+		}
 		
 		Banco banco = new Banco();
 		
