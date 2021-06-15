@@ -2,7 +2,7 @@ package br.com.caelum.gerenciador.servlet;
 
 import java.util.Date;
 
-public class Empresa {
+public class Empresa extends Pessoas{
 
 	private Integer id;
 	private String nome;

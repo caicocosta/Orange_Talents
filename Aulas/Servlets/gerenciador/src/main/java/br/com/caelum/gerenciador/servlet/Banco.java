@@ -13,6 +13,7 @@ public class Banco {
 		Empresa empresa = new Empresa();
 		empresa.setId(chaveSequencial++);
 		empresa.setNome("Zup");
+		empresa.setEmail("caico@gmail.com");
 		Empresa empresa2 = new Empresa();
 		empresa2.setId(chaveSequencial++);
 		empresa2.setNome("Google");

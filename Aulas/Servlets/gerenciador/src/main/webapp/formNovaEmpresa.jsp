@@ -10,6 +10,7 @@
 	<form action="${linkServeletNovaEmpresa}" method="post">
 	  Nome: <input type="text" name="nome" />
 	  Data Abertura: <input type="text" name="dataAbertura" />
+	  E-mail: <input type="email" name="email" />
 	  <input type="submit" name="Enviar"/>
 	</form>  
 
