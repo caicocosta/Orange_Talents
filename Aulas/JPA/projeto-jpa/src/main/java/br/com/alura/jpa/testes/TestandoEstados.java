@@ -4,12 +4,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class TesteCriaTabelas {
+import br.com.alura.jpa.modelo.Conta;
+
+public class TestandoEstados {
+
 	public static void main(String[] args) {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("alura");
-		EntityManager createEntityManager = emf.createEntityManager();
-		emf.close();
+		EntityManager em = emf.createEntityManager();
 		
+		Conta conta = new Conta();
+		
+
 	}
+
 }
