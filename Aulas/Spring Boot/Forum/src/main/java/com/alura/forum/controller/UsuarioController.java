@@ -34,7 +34,7 @@ public class UsuarioController {
 	@GetMapping
 	@Cacheable(value = "listaUsuario")
 	public Page<Usuario> listar(
-			@PageableDefault(sort = "id", direction = Direction.DESC)
+			@PageableDefault(sort = "id", direction = Direction.DESC, size = 3)
 			Pageable paginacao){
 		
 		return usuarioRepository.findAll(paginacao);
