@@ -14,6 +14,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -31,6 +32,9 @@ public class Usuario implements UserDetails{
 	
 	private String email;
 	private String senha;
+	
+	@Range(min = 1, max = 100)
+	private Integer idade;	
 	
 	@ManyToMany(fetch = FetchType.EAGER)			
 	private List<Perfil> perfil = new ArrayList<>();
@@ -90,6 +94,24 @@ public class Usuario implements UserDetails{
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	
+
+	public Integer getIdade() {
+		return idade;
+	}
+
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
+
+	public List<Perfil> getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(List<Perfil> perfil) {
+		this.perfil = perfil;
 	}
 
 	@Override

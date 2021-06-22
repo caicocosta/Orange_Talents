@@ -1,7 +1,5 @@
 package com.alura.forum.config.security;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,10 +18,10 @@ public class AutenticacaoService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		Optional<Usuario> usuario = usuarioRepository.findByEmail(username);   
+		Usuario usuario = usuarioRepository.findByEmail(username);   
 		
-		if (usuario.isPresent()) {
-			return usuario.get();
+		if (usuario != null) {
+			return usuario;
 		} 			
 		
 		throw new UsernameNotFoundException("Dados inválidos");

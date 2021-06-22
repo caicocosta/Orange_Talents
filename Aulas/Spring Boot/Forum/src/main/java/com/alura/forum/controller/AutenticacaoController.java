@@ -20,7 +20,7 @@ import com.alura.forum.dto.TokenDTO;
 
 @RestController
 @RequestMapping("/auth")
-@Profile("prod")
+@Profile(value = {"prod", "test"})
 public class AutenticacaoController {
 	
 	@Autowired
